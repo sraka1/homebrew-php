@@ -12,9 +12,6 @@ class Php53Zmq < AbstractPhp53Extension
   depends_on 'php53' unless build.include?('without-homebrew-php')
 
   def install
-    # See https://github.com/mxcl/homebrew/pull/5947
-    ENV.universal_binary
-
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                           phpconfig

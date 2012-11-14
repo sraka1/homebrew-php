@@ -19,8 +19,6 @@ class Php53Phalcon < AbstractPhp53Extension
       Dir.chdir "release"
     end
 
-    ENV.universal_binary
-
     safe_phpize
     system 'export CFLAGS="-O2 -fno-delete-null-pointer-checks"'
     system "./configure", "--prefix=#{prefix}",

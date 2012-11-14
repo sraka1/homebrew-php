@@ -13,9 +13,6 @@ class Php54Igbinary < AbstractPhp54Extension
   def install
     Dir.chdir "igbinary-#{version}" unless build.head?
 
-    # See https://github.com/mxcl/homebrew/pull/5947
-    ENV.universal_binary
-
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                           phpconfig

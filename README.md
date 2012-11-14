@@ -162,9 +162,6 @@ The template for the `php54-example` pecl extension would be as follows. Please 
       def install
         Dir.chdir "example-#{version}" unless build.head?
 
-        # See https://github.com/mxcl/homebrew/pull/5947
-        ENV.universal_binary
-
         safe_phpize
         system "./configure", "--prefix=#{prefix}"
         system "make"

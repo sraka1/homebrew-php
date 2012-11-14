@@ -12,9 +12,6 @@ class Php54Xcache < AbstractPhp54Extension
   def extension_type; "zend_extension"; end
 
   def install
-    # See https://github.com/mxcl/homebrew/issues/issue/69
-    ENV.universal_binary unless Hardware.is_64_bit?
-
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,

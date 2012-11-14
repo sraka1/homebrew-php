@@ -13,9 +13,6 @@ class Php54Midgard2 < AbstractPhp54Extension
   depends_on 'midgard2'
 
   def install
-    # See https://github.com/mxcl/homebrew/pull/5947
-    ENV.universal_binary
-
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                           phpconfig

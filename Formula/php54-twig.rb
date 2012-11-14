@@ -11,9 +11,6 @@ class Php54Twig < AbstractPhp54Extension
   depends_on 'php54' unless build.include?('without-homebrew-php')
 
   def install
-    # See https://github.com/mxcl/homebrew/pull/5947
-    ENV.universal_binary
-
     Dir.chdir 'ext/twig' do
       safe_phpize
       system "./configure", "--prefix=#{prefix}",

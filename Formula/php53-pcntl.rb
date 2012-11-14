@@ -13,9 +13,6 @@ class Php53Pcntl < AbstractPhp53Extension
   def install
     Dir.chdir "ext/pcntl"
 
-    # See https://github.com/mxcl/homebrew/pull/5947
-    ENV.universal_binary
-
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,

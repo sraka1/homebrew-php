@@ -15,9 +15,6 @@ class Php54Xdebug < AbstractPhp54Extension
   def install
     Dir.chdir "xdebug-#{version}" unless build.head?
 
-    # See https://github.com/mxcl/homebrew/issues/issue/69
-    ENV.universal_binary
-
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,

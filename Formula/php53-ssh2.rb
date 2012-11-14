@@ -14,9 +14,6 @@ class Php53Ssh2 < AbstractPhp53Extension
   def install
     Dir.chdir "ssh2-#{version}" unless build.head?
 
-    # See https://github.com/mxcl/homebrew/pull/5947
-    ENV.universal_binary unless Hardware.is_64_bit?
-
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                           phpconfig

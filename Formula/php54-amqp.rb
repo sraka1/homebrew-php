@@ -14,9 +14,6 @@ class Php54Amqp < AbstractPhp54Extension
   def install
     Dir.chdir "amqp-#{version}" unless ARGV.build_head?
 
-    # See https://github.com/mxcl/homebrew/pull/5947
-    ENV.universal_binary
-
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                           phpconfig
