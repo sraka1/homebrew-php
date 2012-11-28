@@ -160,6 +160,7 @@ INFO
       "--enable-mbstring",
       "--enable-mbregex",
       "--enable-bcmath",
+      "--enable-embed",
       "--enable-calendar",
       "--with-zlib=#{Formula.factory('zlib').prefix}",
       "--with-ldap",
